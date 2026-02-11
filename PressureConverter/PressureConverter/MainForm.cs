@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Globalization;
 using System.Windows.Forms;
 
 namespace PressureConverter
@@ -275,7 +276,7 @@ namespace PressureConverter
                     return;
                 }
 
-                double barValue = double.Parse(input.Text.Replace(',', '.'));
+                double barValue = double.Parse(input.Text.Replace(',', '.'), CultureInfo.InvariantCulture);
 
                 if (barValue < 0)
                 {
@@ -312,7 +313,7 @@ namespace PressureConverter
                     return;
                 }
 
-                double kgfValue = double.Parse(input.Text.Replace(',', '.'));
+                double kgfValue = double.Parse(input.Text.Replace(',', '.'), CultureInfo.InvariantCulture);
 
                 if (kgfValue < 0)
                 {
