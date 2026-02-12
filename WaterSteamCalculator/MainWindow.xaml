@@ -1,0 +1,52 @@
+﻿<Window x:Class="WaterSteamCalculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="WaterSteamCalculator" Height="500" Width="600"
+        Background="#F5F5F5">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Розрахунок параметрів води та водяної пари"
+                   FontSize="18" FontWeight="Bold" Margin="0,0,0,20"
+                   HorizontalAlignment="Center" />
+
+        <GroupBox Grid.Row="1" Header="Вхідні параметри"
+                  Padding="10" Margin="0,0,0,15">
+            <StackPanel>
+                <TextBlock Text="Тиск, p (МПа):" Margin="0,5" />
+                <TextBox x:Name="PressureInput" Text="0.6" FontSize="14" Padding="5" />
+
+                <TextBlock Text="Питомий об'єм, v (м³/кг):" Margin="0,10,0,5" />
+                <TextBox x:Name="SpecificVolumeInput" Text="0.3" FontSize="14" Padding="5" />
+            </StackPanel>
+        </GroupBox>
+
+        <Button Grid.Row="2" Content="Розрахувати"
+                Click="CalculateButton_Click"
+                FontSize="16" FontWeight="Bold"
+                Background="#4CAF50" Foreground="White"
+                Padding="10" Margin="0,0,0,15"
+                Cursor="Hand" />
+
+        <GroupBox Grid.Row="3" Header="Результати розрахунку"
+                  Padding="10" Margin="0,0,0,10">
+            <StackPanel>
+                <TextBlock x:Name="TemperatureResult" FontSize="13" Margin="0,3" />
+                <TextBlock x:Name="DensityResult" FontSize="13" Margin="0,3" />
+                <TextBlock x:Name="EnthalpyResult" FontSize="13" Margin="0,3" />
+                <TextBlock x:Name="EntropyResult" FontSize="13" Margin="0,3" />
+            </StackPanel>
+        </GroupBox>
+
+        <TextBlock Grid.Row="4" x:Name="InfoText"
+                   TextWrapping="Wrap"
+                   VerticalAlignment="Bottom"
+                   Foreground="Gray" FontSize="11" />
+    </Grid>
+</Window>
